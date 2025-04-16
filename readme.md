@@ -26,6 +26,9 @@ Finally, you need to go into MacOS system settings>Keyboard>Input Sources and en
 # Usage
 All keys are accessed by `<home>-key`, so for example θ would be `<home>-t`.
 
+# Notes
+You cannot have any keyboard shortcuts with interfear with `<alt>-<code-point>`. QMK broadcasts unicode as a series of key presses (i.e. 0x0330 is broadcast as 0, 3, 3, 0) + a leader key. On MacOS this is `<alt>/<option>`. If you have a keyshortcut which intercepts these code points then the charecter will fail to write and you will get gibbrish. Personally I have a few keyshortcuts set up like `<alt>-<left>` for window movment, these are okay since no unicode charecter is going to broadcast `<left>`. However, you could not have say `<alt>-F` because every time a F is in the hex representation that will fail. 
+
 # Keymap
 - home: Switch to physics layer
 - q: ϙ
